@@ -1,7 +1,10 @@
 package com.example.myweatherbase.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -15,12 +18,20 @@ public class MainActivity extends BaseActivity implements CallInterface {
 
     private TextView txtView ;
     private Root root;
+    private RecyclerView recyclerView;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        txtView = findViewById(R.id.txtView);
+        recyclerView = findViewById(R.id.recyclerView);
+
+        MyRecyclerViewAdapter myRecyclerViewAdapter = new MyRecyclerViewAdapter(this);
+        recyclerView.setAdapter(myRecyclerViewAdapter);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(linearLayoutManager);
 
         // Mostramos la barra de progreso y ejecutamos la llamada a la API
         showProgress();
@@ -38,6 +49,7 @@ public class MainActivity extends BaseActivity implements CallInterface {
     @Override
     public void doInUI() {
         hideProgress();
-        txtView.setText(root.getCity());
+//        txtView.setText(root.getCity());
+
     }
 }
