@@ -40,7 +40,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Date date = new Date((long)root.list.get(position).dt*1000);
         holder.dia.setText((new SimpleDateFormat("EEEE")).format(date));
-
+        holder.cielo.setText(root.getList());
 
 //    Date date = new Date((long)root.list.get(position).dt*1000);
 //    cambiarColor(holder.itemView, position);

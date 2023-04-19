@@ -64,18 +64,9 @@ public class MainActivity extends BaseActivity implements CallInterface {
     public void doInUI() {
         hideProgress();
 
-
         SimpleDateFormat dateDayOfWeek = new SimpleDateFormat("E");
         SimpleDateFormat dateDay = new SimpleDateFormat("EEE, d MMM yyyy HH:mm");
 
-
         recyclerView = findViewById(R.id.recyclerView);
-
-//        recyclerView = findViewById(R.id.recicleview);
-//        PrevisionesReciclerView previsionesReciclerView = new PrevisionesReciclerView(this,root);
-//        recyclerView.setAdapter(previsionesReciclerView);
-//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-//        recyclerView.setLayoutManager(linearLayoutManager);
-//        textView.setText(root.getCity());
     }
 }
